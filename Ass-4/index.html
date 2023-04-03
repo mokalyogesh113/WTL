@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		
+		function isValidName(name){
+			for (var i = name.length - 1; i >= 0; i--) {
+				if((name[i]>='a' && name[i]<='z') || (name[i]>='A' && name[i]<='Z') || (name[i]==" ")){}
+				else{return false;}
+			}
+			return true;
+		}
+
+		function isValidPhone(phone){
+			for (var i = phone.length - 1; i >= 0; i--) {
+				if(phone[i]>='0' && phone[i]<='9'){}
+				else{return false;}
+			}
+			return true;
+		}
+
+		function validate()
+		{
+
+			var name = document.getElementById("name-field");
+			var phone = document.getElementById("phone-field");
+
+			if(!isValidName(name.value)){
+				alert("Enter Proper Name");
+				document.getElementById("name-field").focus();
+				return false;
+			}
+
+			if(!isValidPhone(phone.value)){
+				alert("Enter Proper Phone No. ");
+				phone.focus();
+				return false;
+			}
+
+			document.write("Hello "+ name.value);
+
+		}
+	</script>
+
+
+
+
+</head>
+<body>
+	<form onsubmit="return validate()">
+		<center>
+			<h1>Form</h1>
+			<table border =2 cellpadding="10">
+				<tr>
+					<td>Your Name:- </td>
+					<td><input type="text" id="name-field"></td>
+				</tr>				
+				<tr>
+					<td>Phone No:- </td>
+					<td><input type="text" id="phone-field"></td>
+				</tr>		
+				<tr>
+					<td>Email Id:- </td>
+					<td><input type="Email" id="Email-field"></td>
+				</tr>		
+				<tr>
+					<td>Date of Birth:- </td>
+					<td><input type="date" name=""></td>
+				</tr>				
+				<tr>
+					<td>Gender<br><br><br></td>
+					<td>
+						<input type="radio" name="Gender">Male <br>
+						<input type="radio" name="Gender">Female <br>
+						<input type="radio" name="Gender">Other
+					</td>
+				</tr>	
+				<tr>
+					<td>City</td>
+					<td>
+						<select>
+							<option>Nashik</option>
+							<option>Mumbai</option>
+							<option>Jalgaon</option>
+							<option>Pune</option>
+						</select>
+					</td>
+				</tr>			
+
+
+
+				<tr>
+					<td colspan="2"><input type="Submit" name="" value="Submit Form"></td>
+				</tr>
+			</table>
+		</center>
+
+	</form>
+
+
+
+</body>
+</html>
